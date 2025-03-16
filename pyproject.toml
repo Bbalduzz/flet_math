@@ -1,0 +1,36 @@
+[project]
+name = "flet-math"
+version = "0.1.0"
+description = "FletMath control for Flet"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Flet contributors", email = "you@example.com" }
+]
+dependencies = [
+    "flet>=0.27.5",
+]
+
+[project.urls]
+Homepage = "https://mydomain.dev"
+Documentation = "https://github.com/MyGithubAccount/flet-math"
+Repository = "https://github.com/MyGithubAccount/flet-math"
+Issues = "https://github.com/MyGithubAccount/flet-math/issues"
+
+[tool.setuptools.package-data]
+"flutter.flet_math" = ["**/*"]
+
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.27.5",
+]
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.27.5"}
+
+[tool.setuptools]
+license-files = []
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

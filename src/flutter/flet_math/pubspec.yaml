@@ -1,0 +1,21 @@
+name: flet_math
+description: Flet FletMath control
+repository: https://github.com/MyGithubAccount/flet-math/src/flutter/flet_math
+version: 0.1.0
+homepage: https://github.com/MyGithubAccount/flet-math
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flet: 0.26.0
+  flutter:
+    sdk: flutter
+  flutter_math_fork: ^0.7.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  

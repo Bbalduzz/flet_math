@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/flet_math/__init__.py
+src/flet_math/flet_math.py
+src/flet_math.egg-info/PKG-INFO
+src/flet_math.egg-info/SOURCES.txt
+src/flet_math.egg-info/dependency_links.txt
+src/flet_math.egg-info/requires.txt
+src/flet_math.egg-info/top_level.txt
+src/flutter/flet_math/CHANGELOG.md
+src/flutter/flet_math/LICENSE
+src/flutter/flet_math/README.md
+src/flutter/flet_math/pubspec.lock
+src/flutter/flet_math/pubspec.yaml
+src/flutter/flet_math/lib/flet_math.dart
+src/flutter/flet_math/lib/src/create_control.dart
+src/flutter/flet_math/lib/src/flet_math.dart
