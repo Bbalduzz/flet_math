@@ -67,6 +67,21 @@ def main(page: ft.Page):
             text_size=24,
             text_color=ft.colors.BROWN_800,
         ),
+
+        FletMath(
+            tex=r"""
+\begin{aligned} 
+\lim_{x \to 0} \frac{1-\cos x}{x^2} &= \lim_{x \to 0} \frac{(1-\cos x)(1+\cos x)}{x^2(1+\cos x)} \\
+&= \lim_{x \to 0} \frac{1-\cos^2 x}{x^2(1+\cos x)} \\
+&= \lim_{x \to 0} \frac{\operatorname{sen}^2 x}{x^2(1+\cos x)} \\
+&= \lim_{x \to 0} \frac{\operatorname{sen}^2 x}{x^2} \frac{1}{(1+\cos x)} \\
+&= \lim_{x \to 0} \frac{\operatorname{sen}^2 x}{x^2} \cdot \lim_{x \to 0} \frac{1}{(1+\cos x)} \\
+&= 1 \left(\frac{1}{2}\right) \\
+&= \frac{1}{2}
+\end{aligned}
+            """,
+            text_size=24,
+        )
     )
 
     page.update()
