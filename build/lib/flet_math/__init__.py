@@ -1,3 +1,3 @@
-from flet_math.flet_math import FletMath
+from flet_math.flet_math import Math
 
-__all__ = ["FletMath"]
+__all__ = ["Math"]

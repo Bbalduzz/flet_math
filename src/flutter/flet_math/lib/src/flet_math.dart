@@ -28,7 +28,8 @@ class FletMathControl extends StatelessWidget {
         parseCrossAxisAlignment(control.attrString("crossAxisAlignment"));
     MainAxisAlignment? mainAxisAlignment = 
         parseMainAxisAlignment(control.attrString("mainAxisAlignment"));
-
+    bool selectable = control.attrBool("selectable", false) ?? false;
+    
     // Create text style
     TextStyle textStyle = TextStyle(
       color: textColor,
@@ -38,10 +39,18 @@ class FletMathControl extends StatelessWidget {
     );
 
     // Create the Math widget
-    Widget mathWidget = Math.tex(
-      tex ?? "",
-      textStyle: textStyle,
-    );
+    Widget mathWidget;
+    if (selectable) {
+      mathWidget = SelectableMath.tex(
+        tex ?? "",
+        textStyle: textStyle,
+      );
+    } else {
+      mathWidget = Math.tex(
+        tex ?? "",
+        textStyle: textStyle,
+      );
+    }
 
     // Wrap with alignment if needed
     if (crossAxisAlignment != null || mainAxisAlignment != null) {
@@ -79,6 +88,47 @@ FontWeight? parseFontWeight(String? weight) {
       return FontWeight.w800;
     case "black":
       return FontWeight.w900;
+    default:
+      return null;
+  }
+}
+
+CrossAxisAlignment? parseCrossAxisAlignment(String? alignment) {
+  if (alignment == null) return null;
+  switch (alignment.toLowerCase()) {
+    case "start":
+      return CrossAxisAlignment.start;
+    case "end":
+      return CrossAxisAlignment.end;
+    case "center":
+      return CrossAxisAlignment.center;
+    case "stretch":
+      return CrossAxisAlignment.stretch;
+    case "baseline":
+      return CrossAxisAlignment.baseline;
+    default:
+      return null;
+  }
+}
+
+MainAxisAlignment? parseMainAxisAlignment(String? alignment) {
+  if (alignment == null) return null;
+  switch (alignment.toLowerCase()) {
+    case "start":
+      return MainAxisAlignment.start;
+    case "end":
+      return MainAxisAlignment.end;
+    case "center":
+      return MainAxisAlignment.center;
+    case "spacearound":
+    case "space_around":
+      return MainAxisAlignment.spaceAround;
+    case "spacebetween":
+    case "space_between":
+      return MainAxisAlignment.spaceBetween;
+    case "spaceevenly":
+    case "space_evenly":
+      return MainAxisAlignment.spaceEvenly;
     default:
       return null;
   }

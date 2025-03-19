@@ -4,7 +4,7 @@ from flet.core.constrained_control import ConstrainedControl
 from flet.core.control import OptionalNumber
 from flet.core.types import ColorValue, TextAlign, FontWeight, CrossAxisAlignment, MainAxisAlignment
 
-class FletMath(ConstrainedControl):
+class Math(ConstrainedControl):
     """
     A control for rendering LaTeX-style mathematical expressions using flutter_math_fork.
     
@@ -65,6 +65,7 @@ class FletMath(ConstrainedControl):
         text_align: Optional[TextAlign] = None,
         cross_axis_alignment: Optional[CrossAxisAlignment] = None,
         main_axis_alignment: Optional[MainAxisAlignment] = None,
+        selectable: Optional[bool] = None,
     ):
         ConstrainedControl.__init__(
             self,
@@ -100,6 +101,7 @@ class FletMath(ConstrainedControl):
         self.text_align = text_align
         self.cross_axis_alignment = cross_axis_alignment
         self.main_axis_alignment = main_axis_alignment
+        self.selectable = selectable
 
     def _get_control_name(self):
         return "flet_math"
@@ -187,3 +189,12 @@ class FletMath(ConstrainedControl):
             "mainAxisAlignment",
             value.value if isinstance(value, MainAxisAlignment) else value,
         )
+        
+    # selectable
+    @property
+    def selectable(self) -> Optional[bool]:
+        return self._get_attr("selectable")
+
+    @selectable.setter
+    def selectable(self, value: Optional[bool]):
+        self._set_attr("selectable", value)

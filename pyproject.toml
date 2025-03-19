@@ -1,6 +1,6 @@
 [project]
-name = "flet-math"
-version = "0.1.0"
+name = "flet_math"
+version = "0.1.1"
 description = "FletMath control for Flet"
 readme = "README.md"
 requires-python = ">=3.9"
